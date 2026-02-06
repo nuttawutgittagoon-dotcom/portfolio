@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="พอร์ตโฟลิโอส่วนตัว - แสดงผลงาน ประวัติ และความทรงจำ">
+    <meta name="keywords" content="portfolio, web developer, projects, พอร์ตโฟลิโอ, เพื่อน, ความทรงจำ">
+    <meta name="author" content="Your Name">
+    <title>Portfolio | My Journey & Memories</title>
+
+    <!-- Social Media Meta Tags (Open Graph) -->
+    <meta property="og:title" content="Portfolio | My Journey & Memories">
+    <meta property="og:description" content="สวัสดีครับ ผมชื่อณัฐวุฒิ นี่คือเรื่องราว ผลงาน และความทรงจำของผม">
+    <meta property="og:image" content="assets/images/og-preview.svg"> <!-- Create this image! -->
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/music-player.css">
+    <link rel="stylesheet" href="styles/cursor.css"> <!-- New Cursor Styles -->
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Background Animations -->
+    <div class="bg-gradient-orb orb-1"></div>
+    <div class="bg-gradient-orb orb-2"></div>
+    <div class="bg-grid-overlay"></div>
+    <div id="particles-js"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <span class="loader-logo">✨</span>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <p class="loader-text">Loading Memories...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">Portfolio</span>
+            </a>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#home" class="active">หน้าหลัก</a></li>
+                <li><a href="#about">รู้จักฉัน</a></li>
+                <li><a href="#memories">เพื่อนๆ ของฉัน</a></li>
+                <li><a href="#gallery">แกลเลอรี่</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+
+            <div class="navbar-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-in">👋 ยินดีต้อนรับสู่โลกของผม</div>
+                <h1 class="hero-title animate-slide-up">
+                    สวัสดีครับ ผมชื่อ <br>
+                    <span class="text-gradient text-shine">ณัฐวุฒิ จิตตะกูล</span>
+                </h1>
+                <div class="hero-role animate-slide-up delay-100">
+                    <span class="role-prefix">I am a</span>
+                    <span id="typing-text" class="role-text text-gradient"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-subtitle animate-slide-up delay-200">
+                    "ลําบากวันนี้ สบายวันหน้า"
+                </p>
+                <div class="hero-buttons animate-slide-up delay-300">
+                    <a href="assets/resume.pdf" download class="btn btn-primary btn-glow pulse-glow">
+                        <span>📄 Download Resume</span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline glass-button">ติดต่อฉัน</a>
+                </div>
+
+                <div class="hero-stats animate-slide-up delay-300">
+                    <div class="stat-item glass-card-sm">
+                        <span class="stat-number">1+</span>
+                        <span class="stat-label">วันประสบการณ์</span>
+                    </div>
+                    <div class="stat-item glass-card-sm">
+                        <span class="stat-number">0+</span>
+                        <span class="stat-label">โปรเจกต์</span>
+                    </div>
+                    <div class="stat-item glass-card-sm">
+                        <span class="stat-number">เรื่อยๆ+</span>
+                        <span class="stat-label">ความทรงจำ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual animate-float">
+                <div class="profile-image-container glass-card">
+                    <div class="profile-image-wrapper">
+                        <!-- Corrected path based on actual file system -->
+                        <img src="assets/images/ME.png" alt="Profile Picture" class="profile-image"
+                            id="mainProfileImage">
+                    </div>
+                    <div class="profile-decoration dec-1"></div>
+                    <div class="profile-decoration dec-2"></div>
+                </div>
+
+                <!-- Anime/Cartoon Decoration Placeholder -->
+                <div class="anime-mascot floating-mascot">
+                    <!-- Using a cute 3D Robot/Toy as a demo mascot -->
+                    <img src="assets/images/M1.png" style="border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.2);"
+                        alt="Mascot">
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator animate-bounce">
+            <span>เลื่อนลงเพื่อดูเพิ่มเติม</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Wave Divider 1 -->
+    <div class="wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">ตัวตนของฉัน</h2>
+                <p class="section-desc">ทำความรู้จักกันให้มากขึ้น ทั้งเรื่องเรียนและเรื่องเล่น</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-info glass-card animate-on-scroll slide-right">
+                    <h3>📖 ประวัติโดยย่อ</h3>
+                    <div class="about-text-content">
+                        <p class="lead-text">
+                            สวัสดีครับ ผมจบจาก <span class="highlight-text">วิทยาลัยอาชีวศึกษาสุโขทัย</span>
+                            ในสาขา <span class="highlight-text">เทคโนโลยีคอมพิวเตอร์ธุรกิจดิจิทัล</span>
+                        </p>
+                        <p>
+                            ตลอดการเรียนผมไม่เพียงแต่สะสมทักษะด้าน IT แต่ยังให้ความสำคัญกับการสร้าง <span
+                                class="text-gradient font-bold">"มิตรภาพ"</span>
+                            เพราะเชื่อว่าความสำเร็จที่ยิ่งใหญ่เกิดจากการร่วมมือกัน
+                        </p>
+                        <p>
+                            นอกจากเรื่องงานแล้ว ผมมักจะเติมพลังด้วยเสียงดนตรีและการทำกิจกรรมสนุกๆ ร่วมกับเพื่อนเสมอ
+                            นั่นคือช่วงเวลาที่มีความสุขที่สุดของผม
+                        </p>
+                    </div>
+
+                    <div class="timeline mt-8">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>ปัจจุบัน</h4>
+                                <p>จบจากการศึกษาที่ [วิทยาลัยอาชีวศึกษาสุโขทัย]</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>ความสนใจ</h4>
+                                <p>Web Development, Ai, Music, Sports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-skills animate-on-scroll slide-left">
+                    <div class="skill-card glass-card hover-lift">
+                        <div class="skill-icon">💻</div>
+                        <h4>Coding</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card hover-lift">
+                        <div class="skill-icon">📸</div>
+                        <h4>Photography</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card hover-lift">
+                        <div class="skill-icon">🎮</div>
+                        <h4>Gaming</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card hover-lift">
+                        <div class="skill-icon">🎵</div>
+                        <h4>Music</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Friends Section (Horizontal Scroll) -->
+    <section id="memories" class="section-padding overflow-hidden">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="section-tag">My Squad</span>
+                <h2 class="section-title">เพื่อนรักของฉัน</h2>
+                <p class="section-desc">มิตรภาพที่ไม่มีวันจางหาย เลื่อนเพื่อดูเพื่อนๆ ทุกคน</p>
+            </div>
+
+            <div class="friends-carousel-wrapper animate-on-scroll fade-up">
+                <button class="carousel-btn prev-btn" id="friendPrevBtn" aria-label="Previous friend">❮</button>
+                <div class="friends-carousel" id="friendsCarousel">
+
+                    <!-- Friend 1 -->
+                    <div class="friend-card-wrapper">
+                        <div class="friend-card glass-card-hover effect-3d">
+                            <div class="friend-img-wrapper">
+                                <img src="assets/images/no1.jpg" alt="Friend 1" class="friend-img">
+                                <div class="friend-overlay">
+                                    <span class="friend-quote">"ตัวตึงประจำกลุ่ม"</span>
+                                </div>
+                            </div>
+                            <div class="friend-info">
+                                <h3>อัน</h3>
+                                <span class="friend-role">เพื่อนสนิท</span>
+                                <p>คติประจําใจ รู้ทุกเรื่อง รู้ไว้ก่อน ไม่งั้นไม่ใช่อัน</p>
+                                <div class="friend-socials">
+                                    <a href="https://www.instagram.com/babya0_0/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">IG</a>
+                                    <a href="https://www.facebook.com/share/1HuZNqTwdR/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">FB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend 2 -->
+                    <div class="friend-card-wrapper">
+                        <div class="friend-card glass-card-hover effect-3d">
+                            <div class="friend-img-wrapper">
+                                <img src="assets/images/no2.jpg" alt="Friend 2" class="friend-img">
+                                <div class="friend-overlay">
+                                    <span class="friend-quote">"สายลุย คุยรู้เรื่อง"</span>
+                                </div>
+                            </div>
+                            <div class="friend-info">
+                                <h3>ฟลุ๊ค</h3>
+                                <span class="friend-role">เพื่อนสนิท</span>
+                                <p>คติประจําใจ รู้ทุกเรื่อง ยกเว้นเรื่องของ ตัวเอง</p>
+                                <div class="friend-socials">
+                                    <a href="https://www.instagram.com/pp_fluk26/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">IG</a>
+                                    <a href="https://www.facebook.com/pongsatorn.phitsadoo" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">FB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend 3 -->
+                    <div class="friend-card-wrapper">
+                        <div class="friend-card glass-card-hover effect-3d">
+                            <div class="friend-img-wrapper">
+                                <img src="assets/images/no3.jpg" alt="Friend 3" class="friend-img">
+                                <div class="friend-overlay">
+                                    <span class="friend-quote">"สายลุย เเต่งานไม่ลุย"</span>
+                                </div>
+                            </div>
+                            <div class="friend-info">
+                                <h3>กู๊กไก่</h3>
+                                <span class="friend-role">เพื่อนสนิท</span>
+                                <p>สร้างสีสัน สร้างตำนาน</p>
+                                <div class="friend-socials">
+                                    <a href="https://www.instagram.com/sunis_ak.05/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">IG</a>
+                                    <a href="https://www.facebook.com/sunisa.inta.756/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">FB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend 4 -->
+                    <div class="friend-card-wrapper">
+                        <div class="friend-card glass-card-hover effect-3d">
+                            <div class="friend-img-wrapper">
+                                <img src="assets/images/no4.jpg" alt="Friend 4" class="friend-img">
+                                <div class="friend-overlay">
+                                    <span class="friend-quote">"กว่าจะจบ เหนื่อยหน่อยนะ"</span>
+                                </div>
+                            </div>
+                            <div class="friend-info">
+                                <h3>เฟิร์ส</h3>
+                                <span class="friend-role">เพื่อนสนิท</span>
+                                <p>สายลุย</p>
+                                <div class="friend-socials">
+                                    <a href="https://www.instagram.com/duangkamon__05/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">IG</a>
+                                    <a href="https://www.facebook.com/duangkamon.khaothung/" target="_blank"
+                                        rel="noopener noreferrer" class="social-link">FB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Friend 5 -->
+                    <!--  <div class="friend-card-wrapper">
+                        <div class="friend-card glass-card-hover effect-3d">
+                            <div class="friend-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                    alt="Friend 5" class="friend-img">
+                                <div class="friend-overlay">
+                                    <span class="friend-quote">"คู่หูดูโอ้"</span>
+                                </div>
+                            </div>
+                            <div class="friend-info">
+                                <h3>เจมส์</h3>
+                                <span class="friend-role">บัดดี้</span>
+                                <p>รู้ใจกันสุด มองตาก็รู้ใจ</p>
+                                <div class="friend-socials">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">IG</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-link">FB</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+                <button class="carousel-btn next-btn" id="friendNextBtn" aria-label="Next friend">❯</button>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-sm text-tertiary">ลากหรือกดปุ่มเพื่อเลื่อนดูเพื่อนคนอื่นๆ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Masonry) -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="section-tag">Gallery</span>
+                <h2 class="section-title">รวมภาพความประทับใจ</h2>
+                <p class="section-desc">รูปจบ รูปกลุ่ม และกิจกรรมต่างๆ ที่ผ่านมาด้วยกัน</p>
+            </div>
+
+            <div class="gallery-wrapper animate-on-scroll scale-up">
+                <!-- Masonry Grid -->
+                <div class="masonry-grid" id="masonryGrid">
+                    <!-- Gallery Item 1 (Large - Vertical) -->
+                    <div class="gallery-item item-large glass-card-hover">
+                        <img src="assets/images/f1.jpg" alt="Group Photo" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>รูปหมู่สุดเท่</h4>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item glass-card-hover">
+                        <img src="assets/images/1.jpg" loading="lazy" alt="Activity" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>กิจกรรมการเเข่งขันทักษะวิชาชีพ</h4>
+                            <p>คิดถึงตอนนั้นจัง จําโค็คได้เเค่นิดเดียว55</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item glass-card-hover">
+                        <img src="assets/images/2.jpg" loading="lazy" alt="Trip" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>กิจกรรมการเเข่งขันทักษะวิชาชีพ</h4>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 4 (Wide - Horizontal) -->
+                    <div class="gallery-item item-wide glass-card-hover">
+                        <img src="assets/images/end.jpg" loading="lazy" alt="Classroom" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>บรรยากาศในห้องเรียนปวส.2/1 เทคโนโลยีคอมพิวเตอร์ธุรกิจดิจิทัล</h4>
+                            <p>คิดถึง</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 5 -->
+                    <div class="gallery-item glass-card-hover">
+                        <img src="assets/images/f2.jpg" alt="Candid" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>รูปหมู่จบ</h4>
+                            <p>วันปัจฉิมนิเทศ</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item glass-card-hover">
+                        <video class="gallery-img" muted loop playsinline autoplay preload="auto">
+                            <source src="assets/images/m1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-info">
+                            <h4>คลิปหมู่</h4>
+                            <p>วันปัจฉิมนิเทศ</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item 7 (Added to fill gap) -->
+                    <div class="gallery-item glass-card-hover">
+                        <img src="assets/images/f3.jpg" alt="Memories" class="gallery-img">
+                        <div class="gallery-info">
+                            <h4>ความทรงจำดีๆ</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="glass-panel contact-panel animate-on-scroll fade-up">
+                <div class="contact-content">
+                    <div class="section-header">
+                        <h2 class="section-title text-gradient">ติดต่อฉัน</h2>
+                        <p class="section-desc">อยากร่วมงาน หรือแค่ทักทาย ก็ยินดีครับ</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-method">
+                            <span class="icon">📧</span>
+                            <span class="text">nuttawut.gittagoon@gmail.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <span class="icon">📱</span>
+                            <span class="text">095-363-ไม่บอก</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links-large mt-8">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn glass-btn">GitHub</a>
+                        <a href="https://www.facebook.com/nath.th.yan.n.272567/" target="_blank"
+                            rel="noopener noreferrer" class="social-btn glass-btn">Facebook</a>
+                        <a href="https://www.instagram.com/younemebe/" target="_blank" rel="noopener noreferrer"
+                            class="social-btn glass-btn">Instagram</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="ชื่อของคุณ" required
+                                class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="อีเมล" required
+                                class="glass-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" placeholder="ข้อความ..." required
+                                class="glass-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-glow">ส่งข้อความ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2026 Portfolio. Design with Passion & Love ❤️</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#memories">Friends</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Player -->
+    <div class="music-player glass-panel minimized" id="musicPlayer">
+        <button class="player-toggle" id="playerToggle">
+            <div class="equalizer">
+                <span></span><span></span><span></span>
+            </div>
+        </button>
+        <div class="player-main">
+            <div class="player-header">
+                <span class="player-title">Now Playing</span>
+                <button class="player-minimize" id="playerMinimize">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="current-track">
+                <div class="track-artwork"></div>
+                <div class="track-info-wrapper">
+                    <div class="track-name" id="trackName">เลือกเพลง</div>
+                    <div class="track-artist" id="trackArtist">ศิลปิน</div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-glow"></div>
+                </div>
+                <div class="progress-time">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button class="control-btn" id="prevBtn">⏮</button>
+                <button class="control-btn play-pause-btn" id="playPauseBtn">
+                    <span class="play-icon">▶</span>
+                </button>
+                <button class="control-btn" id="nextBtn">⏭</button>
+            </div>
+
+            <div class="volume-control">
+                <span class="volume-icon">🔊</span>
+                <div class="volume-slider" id="volumeSlider">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+
+            <div class="playlist" id="playlist">
+                <!-- Playlist items will be generated by JS -->
+            </div>
+        </div>
+    </div>
+    <!-- Image Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" style="display: none;">
+        <video class="lightbox-content" id="lightbox-video" controls style="display: none;"></video>
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- NoScript Fallback -->
+    <noscript>
+        <style>
+            #preloader {
+                display: none;
+            }
+        </style>
+        <div style="padding: 20px; text-align: center; color: white;">
+            กรุณาเปิดใช้งาน JavaScript เพื่อการแสดงผลที่สมบูรณ์
+        </div>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/interactions.js"></script> <!-- New Interactions -->
+    <script src="js/sound-effects.js"></script> <!-- UI Sounds -->
+    <script src="js/confetti.js"></script> <!-- Celebration -->
+    <script src="js/music-player.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+
+</html>
