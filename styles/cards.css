@@ -20,6 +20,7 @@
     -ms-overflow-style: none;
     /* IE/Edge */
     cursor: grab;
+    scroll-snap-type: x mandatory;
 }
 
 .friends-carousel::-webkit-scrollbar {
@@ -35,6 +36,7 @@
 .friend-card-wrapper {
     flex: 0 0 320px;
     perspective: 1000px;
+    scroll-snap-align: center;
 }
 
 .friend-card {

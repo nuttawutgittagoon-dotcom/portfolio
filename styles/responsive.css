@@ -1,164 +1,186 @@
 /* ===================================
-   Responsive Design
-   Mobile-First Approach
+   Responsive Design - Premium Portfolio
    =================================== */
 
-/* Mobile (default) - < 640px */
-/* Base styles are mobile-first */
-
-/* Small Tablets - 640px and up */
-@media (min-width: 640px) {
+/* --- Mobile Specific Overrides --- */
+@media (max-width: 768px) {
     :root {
-        --container-padding: var(--spacing-8);
+        --container-padding: 1.5rem;
     }
 
     h1 {
-        font-size: var(--font-size-6xl);
-    }
-
-    .section-title h2 {
-        font-size: var(--font-size-5xl);
-    }
-}
-
-/* Tablets - 768px and up */
-@media (min-width: 768px) {
-    section {
-        padding: var(--spacing-24) 0;
-    }
-
-    .grid-cols-md-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .memories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Desktop - 1024px and up */
-@media (min-width: 1024px) {
-    :root {
-        --container-padding: var(--spacing-12);
-    }
-
-    .grid-cols-lg-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .memories-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Large Desktop - 1280px and up */
-@media (min-width: 1280px) {
-    .grid-cols-xl-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .memories-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Hero Section Responsive */
-@media (max-width: 640px) {
-    .hero-content {
-        padding: var(--spacing-12) 0;
-    }
-
-    .hero-title {
-        font-size: var(--font-size-4xl);
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-}
-
-/* Contact Form Responsive */
-@media (min-width: 768px) {
-    .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .form-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-4);
-    }
-}
-
-/* Footer Responsive */
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-}
-
-/* Typography Responsive */
-@media (max-width: 640px) {
-    h1 {
-        font-size: var(--font-size-4xl);
-    }
-
-    h2 {
-        font-size: var(--font-size-3xl);
-    }
-
-    h3 {
-        font-size: var(--font-size-2xl);
-    }
-
-    .section-title h2 {
-        font-size: var(--font-size-3xl);
-    }
-}
-
-/* Spacing Responsive */
-@media (max-width: 640px) {
-    section {
-        padding: var(--spacing-12) 0;
+        font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
     }
 
     .section-title {
-        margin-bottom: var(--spacing-8);
+        font-size: 2rem;
     }
-}
 
-/* Hide/Show Elements */
-@media (max-width: 768px) {
-    .hide-mobile {
-        display: none !important;
+    .section-padding {
+        padding: var(--spacing-16) 0;
     }
-}
 
-@media (min-width: 769px) {
-    .hide-desktop {
-        display: none !important;
+    /* Hero Responsive */
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: var(--spacing-8);
+        padding-top: var(--spacing-20);
     }
-}
 
-/* Container Responsive */
-@media (max-width: 640px) {
-    .container {
+    .hero-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-role {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: var(--spacing-4);
+    }
+
+    .stat-item {
+        min-width: calc(50% - var(--spacing-4));
+        padding: var(--spacing-4);
+    }
+
+    .profile-image-container {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* Navigation Mobile */
+    .navbar-menu {
+        background: var(--glass-bg-strong) !important;
+        backdrop-filter: blur(25px) !important;
+        -webkit-backdrop-filter: blur(25px) !important;
+        width: 100% !important;
+        right: -100% !important;
+        top: 0;
+        transition: var(--transition-slow);
+        border-left: none;
+    }
+
+    .navbar-menu.active {
+        right: 0 !important;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-menu a {
+        display: block;
+        padding: var(--spacing-4);
+        font-size: 1.5rem !important;
+    }
+
+    /* About Section Mobile */
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-6);
+    }
+
+    .about-skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-4);
+    }
+
+    /* Contact Form Mobile */
+    .contact-panel {
+        padding: var(--spacing-6) !important;
+    }
+
+    .contact-form-wrapper {
+        padding: var(--spacing-6) !important;
+    }
+
+    /* Music Player Mobile Adjustments */
+    .music-player {
+        bottom: 20px;
+        right: 20px;
+        max-width: calc(100vw - 40px);
+    }
+
+    .music-player.minimized {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Gallery Bento Adjustment */
+    .masonry-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: minmax(200px, auto) !important;
+    }
+
+    .item-large,
+    .item-wide {
+        grid-row: span 1 !important;
+        grid-column: span 1 !important;
+    }
+
+    /* Fix navbar overlap */
+    .navbar-container {
         padding: 0 var(--spacing-4);
     }
+}
+
+/* --- Small Mobile Fixes --- */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    .hero-buttons {
+        gap: var(--spacing-3);
+    }
+
+    .hero-buttons .btn {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .stat-item {
+        min-width: 100%;
+    }
+
+    .about-skills {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Touch Device Interaction Fixes --- */
+@media (pointer: coarse) {
+
+    /* Disable tilt or heavy animations on touch */
+    .glass-card-hover,
+    .friend-card,
+    .gallery-item {
+        transform: none !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .glass-card-hover:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    /* Make gallery info visible on mobile/touch since hover is inconsistent */
+    .gallery-info {
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+    }
+
+    .gallery-info h4,
+    .gallery-info p {
+        transform: none !important;
+    }
+
+    /* Disable tilt effect specifically via JS if possible, but CSS !important helps */
 }
