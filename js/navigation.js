@@ -10,19 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mobile Menu Toggle ---
     mobileMenuToggle.addEventListener('click', () => {
-        navbarMenu.classList.toggle('active');
+        const isActive = navbarMenu.classList.toggle('active');
+
+        // Lock body scroll when menu is open
+        document.body.style.overflow = isActive ? 'hidden' : '';
 
         // Animate Hamburger
         const bars = mobileMenuToggle.querySelectorAll('.bar');
-        bars[0].style.transform = navbarMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 6px)' : 'none';
-        bars[1].style.opacity = navbarMenu.classList.contains('active') ? '0' : '1';
-        bars[2].style.transform = navbarMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -6px)' : 'none';
+        if (isActive) {
+            bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+        } else {
+            bars[0].style.transform = 'none';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'none';
+        }
     });
 
     // --- Close Menu on Link Click ---
     document.querySelectorAll('.navbar-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navbarMenu.classList.remove('active');
+            document.body.style.overflow = '';
 
             // Reset Hamburger
             const bars = mobileMenuToggle.querySelectorAll('.bar');

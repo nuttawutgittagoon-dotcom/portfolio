@@ -66,15 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements.forEach(el => scrollObserver.observe(el));
 
     // --- Preloader Logic ---
-    window.addEventListener('load', () => {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Fallback: Ensure it closes after 5s regardless of load
+        const fallback = setTimeout(() => {
+            preloader.classList.add('loaded');
+        }, 5000);
+
+        window.addEventListener('load', () => {
+            clearTimeout(fallback);
             // Min display time 1.5s for branding effect
             setTimeout(() => {
                 preloader.classList.add('loaded');
             }, 1500);
-        }
-    });
+        });
+    }
 
     // --- Typing Effect ---
     const typingElement = document.getElementById('typing-text');
