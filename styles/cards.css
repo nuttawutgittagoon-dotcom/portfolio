@@ -1,0 +1,286 @@
+/* ===================================
+   Cards & Carousel Styles
+   =================================== */
+
+/* --- Friends Carousel --- */
+.friends-carousel-wrapper {
+    position: relative;
+    padding: var(--spacing-8) var(--spacing-12);
+    margin: 0 calc(-1 * var(--container-padding));
+}
+
+.friends-carousel {
+    display: flex;
+    gap: var(--spacing-8);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: var(--spacing-12) var(--spacing-8);
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    cursor: grab;
+}
+
+.friends-carousel::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.friends-carousel.active {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.friend-card-wrapper {
+    flex: 0 0 320px;
+    perspective: 1000px;
+}
+
+.friend-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    transition: var(--transition-bounce);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+}
+
+.friend-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.friend-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.friend-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-6);
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.friend-quote {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-size: var(--font-size-lg);
+    transform: translateY(20px);
+    transition: var(--transition-bounce);
+}
+
+.friend-card:hover .friend-overlay {
+    opacity: 1;
+}
+
+.friend-card:hover .friend-quote {
+    transform: translateY(0);
+}
+
+.friend-card:hover .friend-img {
+    transform: scale(1.1);
+}
+
+.friend-info {
+    padding: var(--spacing-6);
+    text-align: center;
+}
+
+.friend-info h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-1);
+    font-family: 'Prompt', sans-serif;
+}
+
+.friend-role {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: var(--spacing-3);
+}
+
+.friend-info p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-4);
+}
+
+.friend-socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+}
+
+.friend-socials .social-link {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    transition: var(--transition-base);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-tertiary);
+}
+
+.friend-socials .social-link:hover {
+    color: var(--color-primary);
+    background: var(--color-bg-secondary);
+}
+
+/* --- 3D Hover Effect --- */
+.effect-3d {
+    transform-style: preserve-3d;
+}
+
+.effect-3d:hover {
+    transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+    box-shadow:
+        -10px 10px 20px rgba(0, 0, 0, 0.1),
+        0 0 30px var(--glass-border);
+}
+
+/* --- Carousel Navigation Buttons --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition-bounce);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--glow-primary);
+}
+
+.prev-btn {
+    left: var(--spacing-4);
+}
+
+.next-btn {
+    right: var(--spacing-4);
+}
+
+/* --- Skill Cards --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--spacing-8);
+    align-items: start;
+}
+
+.about-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-4);
+}
+
+.skill-card {
+    padding: var(--spacing-6);
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-4);
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-full);
+    margin-top: var(--spacing-4);
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+}
+
+/* --- Timeline --- */
+.timeline {
+    position: relative;
+    padding-left: var(--spacing-6);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--spacing-8);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: calc(-1 * var(--spacing-6) - 5px);
+    width: 12px;
+    height: 12px;
+    background: var(--color-primary);
+    border: 3px solid var(--color-bg-primary);
+    border-radius: 50%;
+}
+
+.timeline-content h4 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-1);
+}
+
+.timeline-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* --- Responsive Cards --- */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .friend-card-wrapper {
+        flex: 0 0 280px;
+    }
+}

@@ -1,0 +1,81 @@
+/* ===================================
+   Custom Cursor & Interactive Effects
+   =================================== */
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+    body {
+        cursor: none;
+    }
+
+    a,
+    button,
+    .clickable {
+        cursor: none;
+    }
+}
+
+/* Main Cursor Dot */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 10px var(--color-primary);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+/* Cursor Trailing Outline */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(99, 102, 241, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.1s;
+}
+
+/* Hover State */
+body.hovering .cursor-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-neon-pink);
+    box-shadow: 0 0 20px var(--color-neon-pink);
+    mix-blend-mode: difference;
+}
+
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(236, 72, 153, 0.5);
+    background-color: rgba(236, 72, 153, 0.1);
+}
+
+/* Click Effect */
+.cursor-click-ripple {
+    position: fixed;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    transform: translate(-50%, -50%) scale(0);
+    animation: cursor-ripple 0.5s linear;
+    pointer-events: none;
+    z-index: 9997;
+}
+
+@keyframes cursor-ripple {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
